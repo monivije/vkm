@@ -1,27 +1,7 @@
-
-bracketmatching(expr):
-  stack = []
-for char in expr:
-if char in ["(", "{", "["]:
-stack.append(char)
+deffact(n):
+if n == 1:
+return 1
 else:
-if not stack:
-return False
-current_char = stack.pop()
-if current_char == '(':
-if char != ")":
-return False
-         if current_char == '{':
-if char != "}":
-return False
-         if current_char == '[':
-if char != "]":
-return False
-  if stack:
-return False
-  return True
-expr = "{()}[]"
-if bracketmatching(expr):
-print("Matching")
-else:
-print("Not Matching")
+return (n * fact(n-1))
+n=int(input("Enter the number:"))
+print("The factorial of a number is:",fact(n))
